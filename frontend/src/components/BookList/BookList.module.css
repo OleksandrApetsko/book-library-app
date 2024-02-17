@@ -1,0 +1,70 @@
+.block {
+    padding: 20px;
+    margin: 20px;
+    background-color: #289ba6;
+    border-radius: 5px;
+    box-shadow: #000000;
+}
+
+
+.listUl {
+    padding: 0;
+    margin: 20px -20px;
+    list-style: none;
+}
+
+.listLi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 10px 20px;
+    border-bottom: 1px solid #000000;
+    background-color: #3f886e;
+    list-style-type: none;
+}
+
+.listLi:nth-child(even) {
+    background-color: #215943;
+}
+
+.listLi:hover {
+    background-color: #ccc;
+}
+
+.button {
+    background-color: red;
+    color: #000000;
+    border: darkred;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: darkred;
+}
+
+.highlight {
+    background-color: #289ba6;
+}
+
+.bookInfo {
+    flex: 1;
+    text-align: left;
+}
+
+.bookActions {
+    display: flex;
+    align-items: center;
+}
+
+.starIcon {
+    width: 24px;
+    height: 24px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #289ba6;
+}

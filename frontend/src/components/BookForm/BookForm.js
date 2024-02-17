@@ -5,7 +5,7 @@ import { addBook, fetchBook, selectIsLoadingViaAPI } from '../../redux/slices/bo
 import booksData from '../../data/books.json'
 import createBookWithID from '../../utils/createBookWithID'
 import { setError } from '../../redux/slices/errorSlice'
-import './BookForm.css'
+import s from './BookForm.module.css'
 
 const BookForm = () => {
   const [title, setTitle] = useState('')
@@ -32,28 +32,28 @@ const BookForm = () => {
   }
 
   const handleAddRandomBookViaAPI = () => {
-    dispatch(fetchBook('http://localhost:4000/random-book-delayed'))
+    dispatch(fetchBook('http://localhost:4000/random-book'))
   }
 
   return (
-    <div className="app-block book-form">
+    <div className={s.block}>
       <h2>Add a New Book</h2>
-      <form onSubmit={handleSubmit}>
+      <form className={s.form} onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="title">Title: </label>
-          <input type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
+          <label className={s.label} htmlFor="title">Title: </label>
+          <input className={s.input} type="text" id="title" value={title} onChange={(e) => setTitle(e.target.value)}/>
         </div>
         <div>
-          <label htmlFor="author">Author: </label>
-          <input type="text" id="author" value={author} onChange={(e) => setAuthor(e.target.value)}/>
+          <label className={s.label} htmlFor="author">Author: </label>
+          <input className={s.input} type="text" id="author" value={author} onChange={(e) => setAuthor(e.target.value)}/>
         </div>
-        <button type="submit">Add Book</button>
-        <button type="button" onClick={handleAddRandomBook}>Add Random</button>
-        <button type="button" onClick={handleAddRandomBookViaAPI} disabled={isLoadingViaAPI}>
+        <button className={s.button} type="submit">Add Book</button>
+        <button className={s.button} type="button" onClick={handleAddRandomBook}>Add Random</button>
+        <button className={s.button} type="button" onClick={handleAddRandomBookViaAPI} disabled={isLoadingViaAPI}>
           {isLoadingViaAPI ? (
             <>
               <span>Loading Book...</span>
-              <FaSpinner className="spinner"/>
+              <FaSpinner className={s.spinner}/>
             </>
           ) : 'Add random via API'}
         </button>

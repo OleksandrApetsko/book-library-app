@@ -8,7 +8,7 @@ import {
   setOnlyFavoriteFilter,
   setTitleFilter
 } from '../../redux/slices/filterSlice'
-import './Filter.css'
+import s from './Filter.module.css'
 
 const Filter = () => {
   const dispatch = useDispatch()
@@ -33,31 +33,31 @@ const Filter = () => {
   }
 
   return (
-    <div className="app-block filter">
-      <div className="filter-row">
-        <div className="filter-group">
-          <input
+    <div className={s.block}>
+      <div className={s.row}>
+        <div className={s.group}>
+          <input className={s.input}
             type="text"
             value={titleFilter}
             placeholder="Filter by title..."
             onChange={handleTitleFilterChange}
           />
         </div>
-        <div className="filter-group">
-          <input
+        <div className={s.group}>
+          <input className={s.input}
             type="text"
             value={authorFilter}
             placeholder="Filter by author..."
             onChange={handleAuthorFilterChange}
           />
         </div>
-        <div className="filter-group">
+        <div className={s.group}>
           <label>
-            <input type="checkbox" checked={onlyFavoriteFilter} onChange={handleOnlyFavoriteFilterChange}/>
+            <input className={s.input} type="checkbox" checked={onlyFavoriteFilter} onChange={handleOnlyFavoriteFilterChange}/>
             Only Favorite
           </label>
         </div>
-        <button type="button" onClick={handleResetFilters}>Reset Filters</button>
+        <button className={s.button} type="button" onClick={handleResetFilters}>Reset Filters</button>
       </div>
     </div>
   )
